@@ -1,0 +1,28 @@
+{
+  "name": "angularjsweb",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "live-server app/ --port=3000",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/toanlehcm/AngularjsWeb.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/toanlehcm/AngularjsWeb/issues"
+  },
+  "homepage": "https://github.com/toanlehcm/AngularjsWeb#readme",
+  "description": "",
+  "dependencies": {
+    "angular": "^1.8.2",
+    "angular-route": "^1.8.2"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
