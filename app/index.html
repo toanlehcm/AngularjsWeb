@@ -9,20 +9,16 @@
   <body>
     <div ng-controller="MainController">
       <h1>{{ title }}</h1>
-      
+
       <div>
         <label>Name:</label>
-        <input 
-          type="text" 
-          ng-model="name" 
-          placeholder="Enter a name here"
-          ng-init="name=''"
-          >
-          <h2>Hello {{name}}!</h2>
+        <input type="text" ng-model="name" placeholder="Enter a name here" />
+        <!-- ng-init="name=''" -->
+        <h2>Hello {{name}}!</h2>
       </div>
-      
-      <hr>
-      
+
+      <hr />
+
       <p>Nothing here {{'yet' + '!'}}</p>
 
       <div>
@@ -39,11 +35,30 @@
       </div>
     </div>
 
+    <hr />
+
+    <h1>Phone Catalog - Step 01</h1>
+
+    <!-- Danh sách điện thoại tĩnh -->
+    <ul>
+      <li>
+        <span>Nexus S</span>
+        <p>Fast just got faster with Nexus S.</p>
+      </li>
+      <li>
+        <span>Motorola XOOM™ with Wi-Fi</span>
+        <p>The Next, Next Generation tablet.</p>
+      </li>
+      <li>
+        <span>MOTOROLA XOOM™</span>
+        <p>The Next, Next Generation tablet.</p>
+      </li>
+    </ul>
+
     <!-- AngularJS Library -->
     <!-- <script src="../node_modules/angular/angular.min.js"></script> -->
     <script src="node_modules/angular/angular.min.js"></script>
     <script src="node_modules/angular-route/angular-route.min.js"></script>
-
 
     <!-- App Files -->
     <script src="app/script/app.js"></script>
