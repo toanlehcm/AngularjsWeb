@@ -55,6 +55,18 @@
       </li>
     </ul>
 
+    <h1>Phone Catalog - Step 02</h1>
+
+    <!-- Danh sách điện thoại ĐỘNG với Controller -->
+    <div ng-controller="PhoneListController">
+      <ul>
+        <li ng-repeat="phone in phones">
+          <span>{{phone.name}}</span>
+          <p>{{phone.snippet}}</p>
+        </li>
+      </ul>
+    </div>
+
     <!-- AngularJS Library -->
     <!-- <script src="../node_modules/angular/angular.min.js"></script> -->
     <script src="node_modules/angular/angular.min.js"></script>
@@ -63,5 +75,6 @@
     <!-- App Files -->
     <script src="app/script/app.js"></script>
     <script src="app/controllers/main.controller.js"></script>
+    <script src="app/controllers/phoneList.controller.js"></script>
   </body>
 </html>
