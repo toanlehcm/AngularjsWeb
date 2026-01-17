@@ -1,18 +1,18 @@
-angular.module("AngularJSWeb").component("phoneList", {
+angular.module("AngularJSWeb").component("phoneListComponent", {
   // template: "<ul>" + '  <li ng-repeat="phone in $ctrl.phones">' + "    <span>{{phone.name}}</span>" + "    <p>{{phone.snippet}}</p>" + "  </li>" + "</ul>",
-  templateUrl: "app/components/phoneList/phoneList.template.html",
-  controller: function PhoneListController() {
+  templateUrl: "app/phone-list/phoneList.template.html",
+  controller: function PhoneListComponentController() {
     this.phones = [
       {
-        name: "Nexus S",
-        snippet: "Fast just got faster with Nexus S.",
+        name: "Iphone 5",
+        snippet: "Fast just got faster with Iphone 5.",
       },
       {
-        name: "Motorola XOOM™ with Wi-Fi",
+        name: "Iphone 6 with Wi-Fi",
         snippet: "The Next, Next Generation tablet.",
       },
       {
-        name: "MOTOROLA XOOM™",
+        name: "Iphone 7",
         snippet: "The Next, Next Generation tablet.",
       },
     ];
