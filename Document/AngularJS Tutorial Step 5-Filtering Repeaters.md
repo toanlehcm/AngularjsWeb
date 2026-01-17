@@ -92,6 +92,8 @@ Sau khi thêm các thay đổi này, bạn hãy mở file index.html trong trìn
 
 ---
 
+# Tutorial/ 6 - Two-way Data Binding
+
 Tuyệt vời! Đây là một câu hỏi rất hay và cho thấy bạn đang suy nghĩ sâu về cách AngularJS hoạt động. Sự khác biệt này nằm ở cách `ng-model` và `orderBy` filter hoạt động và mục đích của từng thuộc tính.
 
 Hãy cùng phân tích:
