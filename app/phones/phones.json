@@ -1,0 +1,23 @@
+[
+  {
+    "age": 0,
+    "id": "motorola-xoom-with-wi-fi",
+    "imageUrl": "img/phones/motorola-xoom-with-wi-fi.0.jpg",
+    "name": "Motorola XOOM™ with Wi-Fi",
+    "snippet": "The Next, Next Generation tablet."
+  },
+  {
+    "age": 1,
+    "id": "motorola-xoom",
+    "imageUrl": "img/phones/motorola-xoom.0.jpg",
+    "name": "MOTOROLA XOOM™",
+    "snippet": "The Next, Next Generation tablet."
+  },
+  {
+    "age": 2,
+    "id": "motorola-atrix-4g",
+    "imageUrl": "img/phones/motorola-atrix-4g.0.jpg",
+    "name": "MOTOROLA ATRIX™ 4G",
+    "snippet": "MOTOROLA ATRIX 4G the world's most powerful smartphone."
+  }
+]
