@@ -109,7 +109,7 @@ Chế độ này được gọi là **HTML5 Mode** trong AngularJS.
 
 Vì vậy, câu trả lời là **có thể bỏ `#!`**, nhưng bạn phải chấp nhận đánh đổi là cần thêm một bước cấu hình phía server. Trong các ứng dụng hiện đại, HTML5 mode là tiêu chuẩn.
 
----\***\*\*\*\*\*\*\***\*\*\***\*\*\*\*\*\*\***---
+-------------\***\*\*\*\*\*\*\***\*\*\***\*\*\*\*\*\*\***:-------------
 
 Chắc chắn rồi! Hãy dùng một ví dụ thực tế rất dễ hình dung: **Một tòa nhà chung cư lớn.**
 
@@ -177,7 +177,7 @@ Bây giờ, cũng là muốn đến **Căn hộ số 101**.
 
 Trong các ứng dụng web hiện đại (React, Angular, Vue), **HTML5 Mode** là tiêu chuẩn, vì nó mang lại trải nghiệm tốt hơn cho người dùng và việc cấu hình server ngày nay cũng đã trở nên rất dễ dàng.
 
----**\*\*\*\***\*\***\*\*\*\***---
+---------------**\*\*\*\***\*\***\*\*\*\***---------------
 
 @workspace /explain
 bạn chỉ nói html5(/) có địa chỉ đẹp, sạch hơn hashbang(#!), điều này không thuyết phục để người khác chuyển qua dùng html5(/)
@@ -251,3 +251,115 @@ Chúng ta chuyển sang **HTML5 Mode** không phải để tăng tốc độ cli
 2.  **Xây dựng một ứng dụng có nền tảng vững chắc, sẵn sàng cho tương lai.** Chúng ta sử dụng các URL "thật" theo đúng chuẩn web, giúp ứng dụng dễ dàng tích hợp với các công nghệ caching, analytics và các API mới, thay vì dựa vào một "mánh khóe" đã lỗi thời.
 
 Việc giữ lại Hashbang giống như việc xây một tòa nhà hiện đại nhưng vẫn dùng hệ thống điện thoại quay số. Nó hoạt động, nhưng nó cô lập bạn khỏi hệ sinh thái và những cải tiến vượt bậc đang diễn ra."
+
+-------------\***\*\*\*\*\*\*\***\*\*\***\*\*\*\*\*\*\***:-------------
+
+# Phân biệt `ng-src` vs `src` trong AngularJS
+
+## So sánh
+
+### ❌ **`src` (HTML thông thường)**
+```html
+<img src="{{phone.imageUrl}}" alt="{{phone.name}}" />
+```
+
+**Vấn đề:**
+1. Browser sẽ cố load ảnh **TRƯỚC KHI** AngularJS render
+2. URL sẽ là: `http://127.0.0.1:3000/{{phone.imageUrl}}` → **404 Error**
+3. Sau đó AngularJS mới thay thế `{{phone.imageUrl}}` → load lại ảnh lần 2
+4. **Kết quả:** 2 HTTP requests (1 lỗi + 1 thành công)
+
+### ✅ **`ng-src` (AngularJS directive)**
+```html
+<img ng-src="{{phone.imageUrl}}" alt="{{phone.name}}" />
+```
+
+**Hoạt động:**
+1. AngularJS **CHỜ** cho đến khi `{{phone.imageUrl}}` được resolve
+2. **SAU ĐÓ** mới set attribute `src`
+3. Browser chỉ load ảnh **1 LẦN DUY NHẤT**
+4. **Kết quả:** 1 HTTP request (thành công)
+
+## Khi nào dùng gì?
+
+### ✅ **Dùng `ng-src`:**
+- Khi URL chứa **expression** AngularJS: `{{variable}}`
+- Khi URL **động** (lấy từ controller/API)
+- **99% trường hợp trong AngularJS**
+
+```html
+<!-- ✅ ĐÚNG -->
+<img ng-src="{{phone.imageUrl}}" alt="{{phone.name}}" />
+<img ng-src="img/phones/{{phone.id}}.jpg" alt="{{phone.name}}" />
+<img ng-src="{{$ctrl.getImageUrl(phone)}}" alt="{{phone.name}}" />
+```
+
+### ✅ **Dùng `src`:**
+- Khi URL **TĨNH** (hardcoded)
+- **KHÔNG** chứa expression `{{}}`
+
+```html
+<!-- ✅ ĐÚNG - URL tĩnh -->
+<img src="img/logo.png" alt="Logo" />
+<img src="https://example.com/static/banner.jpg" alt="Banner" />
+```
+
+## Demo vấn đề
+
+### ❌ **SAI - Dùng `src` với expression:**
+
+```html
+<img src="{{phone.imageUrl}}" alt="{{phone.name}}" />
+```
+
+**Console sẽ hiện lỗi:**
+```
+GET http://127.0.0.1:3000/{{phone.imageUrl}} 404 (Not Found)
+GET http://127.0.0.1:3000/img/phones/nexus-s.jpg 200 (OK)
+```
+
+### ✅ **ĐÚNG - Dùng `ng-src`:**
+
+```html
+<img ng-src="{{phone.imageUrl}}" alt="{{phone.name}}" />
+```
+
+**Console sạch sẽ:**
+```
+GET http://127.0.0.1:3000/img/phones/nexus-s.jpg 200 (OK)
+```
+
+## Áp dụng cho các directive khác
+
+AngularJS cung cấp nhiều directive tương tự:
+
+| HTML Attribute | AngularJS Directive | Lý do |
+|---------------|-------------------|-------|
+| `src` | `ng-src` | Tránh 404 error |
+| `href` | `ng-href` | Tránh link lỗi |
+| `style` | `ng-style` | Động hóa CSS |
+| `class` | `ng-class` | Động hóa class |
+
+### Ví dụ:
+
+```html
+<!-- ❌ SAI -->
+<a href="#/phones/{{phone.id}}">{{phone.name}}</a>
+
+<!-- ✅ ĐÚNG -->
+<a ng-href="#/phones/{{phone.id}}">{{phone.name}}</a>
+
+<!-- ❌ SAI -->
+<div style="background-image: url({{phone.imageUrl}})"></div>
+
+<!-- ✅ ĐÚNG -->
+<div ng-style="{'background-image': 'url(' + phone.imageUrl + ')'}"></div>
+```
+
+## Tóm tắt
+
+**Quy tắc vàng:**
+- Có `{{}}` trong giá trị → Dùng `ng-*`
+- Không có `{{}}` (tĩnh) → Dùng attribute HTML thông thường
+
+**Lý do:** Tránh browser load resource với URL chưa được parse bởi AngularJS.

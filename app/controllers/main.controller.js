@@ -6,7 +6,6 @@ angular.module("AngularJSWeb").controller("MainController", [
     $scope.name = "Bạn";
     $scope.todos = ["Học AngularJS", "Làm bài tập", "Thực hành"];
     $scope.newTodo = "";
-console.log('scope', $scope, $scope.name);
 
     // Thêm todo
     $scope.addTodo = function () {
