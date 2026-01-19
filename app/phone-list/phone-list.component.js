@@ -26,12 +26,24 @@ angular.module("AngularJSWeb").component("phoneListComponent", {
   // },
 
   /*------- Lesson 7 -------*/
-  controller: function PhoneListComponentController($http) {
-    var self = this; // Lưu lại this của controller để sử dụng trong hàm callback.
-    self.orderProp = "age";
+  // controller: function PhoneListComponentController($http) {
+  //   var self = this; // Lưu lại this của controller để sử dụng trong hàm callback.
+  //   self.orderProp = "age";
 
-    $http.get("app/phones/phones.json").then(function (response) {
-      self.phones = response.data;
-    });
-  },
+  //   $http.get("app/phones/phones.json").then(function (response) {
+  //     self.phones = response.data;
+  //   });
+  // },
+  /*------- Lesson 9 -------*/
+  controller: [
+    "$http",
+    function PhoneListController($http) {
+      var self = this;
+      self.orderProp = "age";
+
+      $http.get("app/phones/phones.json").then(function (response) {
+        self.phones = response.data;
+      });
+    },
+  ],
 });
