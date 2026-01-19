@@ -31,8 +31,6 @@ angular.module("AngularJSWeb").component("phoneListComponent", {
     self.orderProp = "age";
 
     $http.get("app/phones/phones.json").then(function (response) {
-      console.log("response", response);
-
       self.phones = response.data;
     });
   },

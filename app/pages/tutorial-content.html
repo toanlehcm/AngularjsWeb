@@ -1,0 +1,54 @@
+<div ng-controller="MainController">
+  <h1>{{ title }}</h1>
+
+  <div>
+    <label>Name:</label>
+    <input type="text" ng-model="name" placeholder="Enter a name here" />
+    <h2>Hello {{name}}!</h2>
+  </div>
+
+  <hr />
+
+  <p>Nothing here {{'yet' + '!'}}</p>
+
+  <div>
+    <h2>Danh sách Todo:</h2>
+    <input type="text" ng-model="newTodo" placeholder="Thêm todo mới" />
+    <button ng-click="addTodo()">Thêm</button>
+
+    <ul>
+      <li ng-repeat="todo in todos">
+        {{ todo }}
+        <button ng-click="removeTodo($index)">Xóa</button>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<hr />
+
+<h1>Phone Catalog - Step 01</h1>
+<ul>
+  <li>
+    <span>Nexus S</span>
+    <p>Fast just got faster with Nexus S.</p>
+  </li>
+  <li>
+    <span>Motorola XOOM™ with Wi-Fi</span>
+    <p>The Next, Next Generation tablet.</p>
+  </li>
+  <li>
+    <span>MOTOROLA XOOM™</span>
+    <p>The Next, Next Generation tablet.</p>
+  </li>
+</ul>
+
+<h1>Phone Catalog - Step 02</h1>
+<div ng-controller="PhoneListController">
+  <ul>
+    <li ng-repeat="phone in phones">
+      <span>{{phone.name}}</span>
+      <p>{{phone.snippet}}</p>
+    </li>
+  </ul>
+</div>
