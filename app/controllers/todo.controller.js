@@ -1,4 +1,4 @@
-angular.module("AngularJSWeb").controller("MainController", [
+angular.module("AngularJSWeb").controller("TodoController", [
   "$scope",
   function ($scope) {
     // Khởi tạo data
