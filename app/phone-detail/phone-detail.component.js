@@ -1,21 +1,17 @@
 angular.module("AngularJSWeb").component("phoneDetail", {
     templateUrl: "app/phone-detail/phone-detail.template.html",
-    controller: [
-        "$routeParams",
-        "$http",
+    controller: ["$routeParams", "$http",
         function PhoneDetailController($routeParams, $http) {
-            // console.log('$routeParams',JSON.stringify($routeParams));
-            
             var self = this;
             self.phoneId = $routeParams.phoneId;
 
-            $http.get("app/phones/phones.json").then(function (response) {
-                var phones = response.data;
+            $http.get("app/phones/" + $routeParams.phoneId + '.json').then(function (response) {
+                self.phone = response.data;
                 
                 // Find phone by id.
-                self.phone = phones.find(function (p) {
-                    return p.id === self.phoneId;
-                });
+                // self.phone = response.data.find(function (p) {
+                //     return p.id === self.phoneId;
+                // });
             });
         }
     ]

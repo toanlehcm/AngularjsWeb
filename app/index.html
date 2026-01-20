@@ -4,7 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AngularJS Learning</title>
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="app/css/app.css" />
+    <link rel="stylesheet" href="app/css/app.animations.css" />
+    <link rel="stylesheet" href="app/css/tutorial.css" />
   </head>
   <body>
     <nav>
@@ -13,13 +17,18 @@
     </nav>
 
     <!-- View container -->
-    <div ng-view></div>
+    <div class="view-container">
+      <div ng-view class="view-frame"></div>
+    </div>
 
     <!-- AngularJS Library -->
     <!-- <script src="../node_modules/angular/angular.min.js"></script> -->
     <script src="node_modules/angular/angular.min.js"></script>
     <script src="node_modules/angular-route/angular-route.min.js"></script>
 
+    <!-- Bootstrap Bundle (includes Popper) -->
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    
     <!-- App Files -->
     <script src="app/script/routes.js"></script>
     <script src="app/controllers/todo.controller.js"></script>

@@ -4,6 +4,9 @@
   "main": "index.js",
   "scripts": {
     "start": "live-server --port=3000 --entry-file=app/index.html",
+    "sass": "sass app/css/tutorial.scss app/css/tutorial.css",
+    "sass:watch": "sass --watch app/css:app/css",
+    "dev": "npm run sass:watch & npm start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,9 +23,11 @@
   "description": "",
   "dependencies": {
     "angular": "^1.8.2",
-    "angular-route": "^1.8.2"
+    "angular-route": "^1.8.2",
+    "bootstrap": "^5.3.8"
   },
   "devDependencies": {
-    "live-server": "^1.2.2"
+    "live-server": "^1.2.2",
+    "sass": "^1.97.2"
   }
 }
