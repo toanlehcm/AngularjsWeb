@@ -12,7 +12,7 @@
   padding: 2em;
   width: 400px;
 }
-.phone-detail-page .phone:first-child {
+.phone-detail-page .phone.selected {
   display: block;
 }
 .phone-detail-page .phone-images {
@@ -30,6 +30,10 @@
   height: 100px;
   padding: 1em;
   width: 100px;
+  cursor: pointer;
+}
+.phone-detail-page .phone-thumbs img:hover {
+  opacity: 0.7;
 }
 .phone-detail-page .phone-thumbs li {
   background-color: white;
@@ -37,6 +41,9 @@
   cursor: pointer;
   display: inline-block;
   margin: 1em;
+}
+.phone-detail-page .phone-thumbs li:hover {
+  border-color: #007bff;
 }
 .phone-detail-page .specs {
   clear: both;

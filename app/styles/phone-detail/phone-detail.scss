@@ -1,4 +1,4 @@
-.phone-detail-page{
+.phone-detail-page {
   h1 {
     border-bottom: 1px solid gray;
     margin-top: 0;
@@ -15,7 +15,8 @@
     width: 400px;
   }
 
-  .phone:first-child {
+  // Only show selected image.
+  .phone.selected {
     display: block;
   }
 
@@ -36,6 +37,11 @@
     height: 100px;
     padding: 1em;
     width: 100px;
+    cursor: pointer; // Add cursor pointer
+
+    &:hover {
+      opacity: 0.7; // Hover effect
+    }
   }
 
   .phone-thumbs li {
@@ -44,6 +50,10 @@
     cursor: pointer;
     display: inline-block;
     margin: 1em;
+
+    &:hover {
+      border-color: #007bff; // Hover effect
+    }
   }
 
   .specs {
