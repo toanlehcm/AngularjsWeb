@@ -34,16 +34,24 @@ angular.module("AngularJSWeb").component("phoneListComponent", {
   //     self.phones = response.data;
   //   });
   // },
+  
   /*------- Lesson 9 -------*/
-  controller: [
-    "$http",
-    function PhoneListController($http) {
-      var self = this;
-      self.orderProp = "age";
+  // controller: [
+  //   "$http",
+  //   function PhoneListController($http) {
+  //     var self = this;
+  //     self.orderProp = "age";
 
-      $http.get("app/phones/phones.json").then(function (response) {
-        self.phones = response.data;
-      });
-    },
-  ],
+  //     $http.get("app/phones/phones.json").then(function (response) {
+  //       self.phones = response.data;
+  //     });
+  //   },
+  // ],
+
+  /*------- Lesson 11: using Phone Service -------*/
+  controller: ["PhoneService", function PhoneListController(PhoneService) {
+    var self = this;
+    self.orderProp = "age";
+    self.phones = PhoneService.query();
+  }]
 });

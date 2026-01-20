@@ -1,7 +1,8 @@
 // Init AngularJS module
-angular.module("AngularJSWeb", ["ngRoute"]).config([
+angular.module("AngularJSWeb", ["ngRoute", "ngResource"]).config([
     "$routeProvider",
-    function ($routeProvider) {
+    "$locationProvider",
+    function ($routeProvider, $locationProvider) {
         $routeProvider
         .when("/phones", {
             // templateUrl: "app/views/phone-list.html",
