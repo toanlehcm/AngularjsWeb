@@ -7,7 +7,7 @@ angular.module("AngularJSWeb").component("phoneDetail", {
 
             $http.get("app/phones/" + $routeParams.phoneId + '.json').then(function (response) {
                 self.phone = response.data;
-                
+
                 // Find phone by id.
                 // self.phone = response.data.find(function (p) {
                 //     return p.id === self.phoneId;

@@ -1,28 +1,28 @@
-.tutorial-content h1 {
+.tutorial-page h1 {
   color: #dd0031;
   border-bottom: 1px solid gray;
   margin-top: 0;
 }
-.tutorial-content input {
+.tutorial-page input {
   padding: 10px;
   margin: 10px 0;
   width: 300px;
 }
-.tutorial-content button {
+.tutorial-page button {
   padding: 10px 20px;
   background: #dd0031;
   color: white;
   border: none;
   cursor: pointer;
 }
-.tutorial-content button:hover {
+.tutorial-page button:hover {
   background: #c50028;
 }
-.tutorial-content ul {
+.tutorial-page ul {
   list-style: none;
   padding: 0;
 }
-.tutorial-content li {
+.tutorial-page li {
   background: white;
   margin: 10px 0;
   padding: 10px;
@@ -30,5 +30,3 @@
   justify-content: space-between;
   align-items: center;
 }
-
-/*# sourceMappingURL=tutorial.css.map */

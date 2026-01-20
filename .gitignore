@@ -1,2 +1,9 @@
 node_modules
 package-lock.json
+
+# Compiled CSS
+app/style/**/*.css
+app/style/**/*.css.map
+
+# Exclude specific CSS if needed
+!app/style/vendor/*.css

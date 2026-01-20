@@ -4,8 +4,8 @@
   "main": "index.js",
   "scripts": {
     "start": "live-server --port=3000 --entry-file=app/index.html",
-    "sass": "sass app/css/tutorial.scss app/css/tutorial.css",
-    "sass:watch": "sass --watch app/css:app/css",
+    "sass": "sass app/styles:app/styles --no-source-map",
+    "sass:watch": "sass --watch app/styles:app/styles --no-source-map",
     "dev": "npm run sass:watch & npm start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

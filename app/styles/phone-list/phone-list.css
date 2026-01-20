@@ -1,0 +1,35 @@
+.phone-list-page .phone-name {
+  margin-top: 0;
+}
+.phone-list-page .phones {
+  list-style: none;
+}
+.phone-list-page .phones li {
+  clear: both;
+  height: 115px;
+  padding-top: 15px;
+}
+.phone-list-page .thumbnail {
+  display: block;
+  padding: 4px;
+  margin-bottom: 20px;
+  line-height: 1.42857143;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  -webkit-transition: border 0.2s ease-in-out;
+  -o-transition: border 0.2s ease-in-out;
+  transition: border 0.2s ease-in-out;
+}
+.phone-list-page .thumb {
+  width: 100px;
+  height: 100px;
+  float: left;
+  margin: -0.5em 1em 1.5em 0;
+  padding-bottom: 1em;
+}
+.phone-list-page .thumb img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}

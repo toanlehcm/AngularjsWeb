@@ -1,0 +1,58 @@
+.phone-detail-page h1 {
+  border-bottom: 1px solid gray;
+  margin-top: 0;
+}
+.phone-detail-page .phone {
+  background-color: white;
+  display: none;
+  float: left;
+  height: 400px;
+  margin-bottom: 2em;
+  margin-right: 3em;
+  padding: 2em;
+  width: 400px;
+}
+.phone-detail-page .phone:first-child {
+  display: block;
+}
+.phone-detail-page .phone-images {
+  float: left;
+  height: 450px;
+  overflow: hidden;
+  position: relative;
+  width: 450px;
+}
+.phone-detail-page .phone-thumbs {
+  list-style: none;
+  margin: 0;
+}
+.phone-detail-page .phone-thumbs img {
+  height: 100px;
+  padding: 1em;
+  width: 100px;
+}
+.phone-detail-page .phone-thumbs li {
+  background-color: white;
+  border: 1px solid black;
+  cursor: pointer;
+  display: inline-block;
+  margin: 1em;
+}
+.phone-detail-page .specs {
+  clear: both;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.phone-detail-page .specs dt {
+  font-weight: bold;
+}
+.phone-detail-page .specs > li {
+  display: inline-block;
+  vertical-align: top;
+  width: 200px;
+}
+.phone-detail-page .specs > li > span {
+  font-size: 1.2em;
+  font-weight: bold;
+}
