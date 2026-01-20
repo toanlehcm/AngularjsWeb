@@ -1,4 +1,4 @@
-angular.module("AngularJSWeb").factory("PhoneService", [
+angular.module("core.phone").factory("PhoneService", [
     "$resource",
     function ($resource) {
         return $resource(
