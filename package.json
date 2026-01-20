@@ -23,9 +23,11 @@
   "description": "",
   "dependencies": {
     "angular": "^1.8.2",
-    "angular-resource": "^1.8.3",
+    "angular-animate": "^1.8.2",
+    "angular-resource": "^1.8.2",
     "angular-route": "^1.8.2",
-    "bootstrap": "^5.3.8"
+    "bootstrap": "^5.3.8",
+    "jquery": "^3.7.1"
   },
   "devDependencies": {
     "live-server": "^1.2.2",

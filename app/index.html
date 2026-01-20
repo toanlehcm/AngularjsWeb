@@ -36,20 +36,32 @@
       <div ng-view class="view-frame"></div>
     </div>
 
+    <!-- Used for JavaScript animations (include this before angular.js) -->
+    <!-- <script src="lib/jquery/dist/jquery.js"></script> -->
+     <script src="node_modules/jquery/dist/jquery.min.js"></script>
+
     <!-- AngularJS Library -->
     <script src="node_modules/angular/angular.min.js"></script>
     <script src="node_modules/angular-route/angular-route.min.js"></script>
     <script src="node_modules/angular-resource/angular-resource.min.js"></script>
+    <script src="node_modules/angular-animate/angular-animate.min.js"></script>
+    <!-- Adds animation support in AngularJS -->
+    <!-- <script src="lib/angular-animate/angular-animate.js"></script> -->
 
     <!-- Bootstrap Bundle -->
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- App Files -->
+    <script src="app/script/routes.js"></script>
+
+    <!-- Defines JavaScript animations -->
+    <script src="app/script/app.animations.js"></script>
+     <!-- <script src="app/scripts/app.animations.js"></script> -->
 
     <!-- Core Module -->
     <script src="app/core/core.module.js"></script>
     <script src="app/core/checkmark/checkmark.filter.js"></script>
     
-    <!-- App Files -->
-    <script src="app/script/routes.js"></script>
 
     <!-- Services -->
      <script src="app/core/phone/phone.module.js"></script>

@@ -1,5 +1,5 @@
 // Init AngularJS module
-angular.module("AngularJSWeb", ["ngRoute", "ngResource", "core"]).config([
+angular.module("AngularJSWeb", ["ngRoute", "ngResource", "core", "ngAnimate"]).config([
     "$routeProvider",
     "$locationProvider",
     function ($routeProvider, $locationProvider) {
