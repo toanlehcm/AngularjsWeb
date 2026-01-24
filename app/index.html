@@ -10,15 +10,14 @@
     <link rel="stylesheet" href="app/components/header/header.style.css" />
     <link rel="stylesheet" href="app/components/footer/footer.style.css" />
     <link rel="stylesheet" href="app/components/sidebar/sidebar.style.css" />
-    <link rel="stylesheet" href="app/components/main-content/main-content.style.css" />
   </head>
   <body layout="column" ng-cloak>
     <admin-header></admin-header>
     <div layout="row" flex class="admin-layout">
       <admin-sidebar></admin-sidebar>
-      <!-- <main class="admin-main-content" flex>
-        <admin-main-content></admin-main-content>
-      </main> -->
+      <main class="admin-main-content" flex>
+        <ng-view></ng-view>
+      </main>
     </div>
     <admin-footer></admin-footer>
 
@@ -41,6 +40,5 @@
     <script src="app/components/header/header.component.js"></script>
     <script src="app/components/sidebar/sidebar.component.js"></script>
     <script src="app/components/footer/footer.component.js"></script>
-    <script src="app/components/main-content/main-content.component.js"></script>
   </body>
 </html>
