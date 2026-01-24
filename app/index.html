@@ -3,74 +3,44 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AngularJS Learning</title>
-
+    <title>Admin Dashboard</title>
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="node_modules/angular-material/angular-material.min.css" />
     <link rel="stylesheet" href="app/styles/app.css" />
-    <link rel="stylesheet" href="app/styles/app.animations.css" />
-    <link rel="stylesheet" href="app/styles/tutorial/tutorial.css" />
-    <link rel="stylesheet" href="app/styles/phone-list/phone-list.css" />
-    <link rel="stylesheet" href="app/styles/phone-detail/phone-detail.css" />
+    <link rel="stylesheet" href="app/components/header/header.style.css" />
+    <link rel="stylesheet" href="app/components/footer/footer.style.css" />
+    <link rel="stylesheet" href="app/components/sidebar/sidebar.style.css" />
+    <link rel="stylesheet" href="app/components/main-content/main-content.style.css" />
   </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#!/phones">📱 Phone Catalog</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="#!/phones">Phone List</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#!/tutorial">Tutorial</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <div class="view-container">
-      <div ng-view class="view-frame"></div>
+  <body layout="column" ng-cloak>
+    <admin-header></admin-header>
+    <div layout="row" flex class="admin-layout">
+      <admin-sidebar></admin-sidebar>
+      <!-- <main class="admin-main-content" flex>
+        <admin-main-content></admin-main-content>
+      </main> -->
     </div>
+    <admin-footer></admin-footer>
 
-    <!-- Used for JavaScript animations (include this before angular.js) -->
-    <!-- <script src="lib/jquery/dist/jquery.js"></script> -->
-     <script src="node_modules/jquery/dist/jquery.min.js"></script>
-
-    <!-- AngularJS Library -->
     <script src="node_modules/angular/angular.min.js"></script>
+    <script src="node_modules/angular-animate/angular-animate.min.js"></script>
+    <script src="node_modules/angular-aria/angular-aria.min.js"></script>
+    <script src="node_modules/angular-messages/angular-messages.min.js"></script>
+    <script src="node_modules/angular-material/angular-material.min.js"></script>
     <script src="node_modules/angular-route/angular-route.min.js"></script>
     <script src="node_modules/angular-resource/angular-resource.min.js"></script>
-    <script src="node_modules/angular-animate/angular-animate.min.js"></script>
-    <!-- Adds animation support in AngularJS -->
-    <!-- <script src="lib/angular-animate/angular-animate.js"></script> -->
 
     <!-- Bootstrap Bundle -->
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- App Files -->
+    <script src="app/script/app.js"></script>
     <script src="app/script/routes.js"></script>
 
-    <!-- Defines JavaScript animations -->
-    <script src="app/script/app.animations.js"></script>
-     <!-- <script src="app/scripts/app.animations.js"></script> -->
-
-    <!-- Core Module -->
-    <script src="app/core/core.module.js"></script>
-    <script src="app/core/checkmark/checkmark.filter.js"></script>
-    
-
-    <!-- Services -->
-     <script src="app/core/phone/phone.module.js"></script>
-    <script src="app/core/phone/phone.service.js"></script>
-    
-    <!-- Components -->
-    <script src="app/controllers/todo.controller.js"></script>
-    <script src="app/controllers/phone-list.controller.js"></script>
-    <script src="app/phone-list/phone-list.component.js"></script>
-    <script src="app/phone-detail/phone-detail.component.js"></script>
+    <!-- Import components -->
+    <script src="app/components/header/header.component.js"></script>
+    <script src="app/components/sidebar/sidebar.component.js"></script>
+    <script src="app/components/footer/footer.component.js"></script>
+    <script src="app/components/main-content/main-content.component.js"></script>
   </body>
 </html>

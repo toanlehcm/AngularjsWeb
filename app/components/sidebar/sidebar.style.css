@@ -1,0 +1,60 @@
+.admin-sidebar {
+  height: calc(100vh - 44px); /* Trừ chiều cao header */
+  min-height: calc(100vh - 44px);
+  width: 370px;
+  background: #fff;
+  padding: 0;
+  box-sizing: border-box;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  box-shadow: 0 2px 8px 0 rgba(44, 62, 80, 0.04);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  margin-top: 0;
+}
+
+.admin-sidebar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.admin-sidebar li {
+  padding: 18px 24px;
+  font-size: 16px;
+  color: #7a859e;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    color 0.2s;
+  border-radius: 0;
+  margin: 0;
+  font-weight: 500;
+}
+
+.admin-sidebar li.active,
+.admin-sidebar li:hover {
+  background: #1769aa;
+  color: #fff;
+}
+
+.admin-sidebar li.active {
+  position: relative;
+}
+
+.admin-sidebar li.active::after {
+  content: "";
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #ff7a01;
+  border-radius: 12px;
+  padding: 2px 12px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  /* Nếu muốn hiện badge "Not Converted", hãy dùng HTML thay vì CSS content */
+  display: none;
+}
